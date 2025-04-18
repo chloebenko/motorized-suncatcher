@@ -70,10 +70,10 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
             
         if results.pose_landmarks is None:
             person_text = "No one here."
-            resp = requests.get("http://192.168.1.137:5000/no_one")
+            resp = requests.get("http://127.0.0.1:5000/no_one")
         else:
             person_text = "Present!"
-            resp = requests.get("http://192.168.1.137:5000/someone")
+            resp = requests.get("http://127.0.0.1:5000/someone")
 
         # Draw the pose annotation on the image.
         image.flags.writeable = True
